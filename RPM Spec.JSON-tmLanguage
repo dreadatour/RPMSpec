@@ -1,0 +1,76 @@
+{
+	"name": "RPM Spec",
+	"scopeName": "source.spec",
+	"fileTypes": ["spec"],
+	"patterns": [
+		{
+			"match": "(Icon|ExclusiveOs|ExcludeOs):",
+			"name": "keyword.spec"
+		}, {
+			"match": "(BuildArch|BuildArchitectures|ExclusiveArch|ExcludeArch):",
+			"name": "keyword.spec"
+		}, {
+			"match": "(Conflicts|Obsoletes|Provides|Requires|Requires\\(.*\\)|Enhances|Suggests|BuildConflicts|BuildRequires|Recommends|PreReq|Supplements):",
+			"name": "keyword.spec"
+		}, {
+			"match": "(Epoch|Serial|Nosource|Nopatch):",
+			"name": "keyword.spec"
+		}, {
+			"match": "(AutoReq|AutoProv|AutoReqProv):",
+			"name": "keyword.spec"
+		}, {
+			"match": "(Copyright|License|Summary|Summary\\(.*\\)|Distribution|Vendor|Packager|Group|Source\\d*|Patch\\d*|BuildRoot|Prefix):",
+			"name": "keyword.spec"
+		}, {
+			"match": "(Name|Version|Release|Url|URL):",
+			"name": "keyword.spec"
+		}, {
+			"name": "keyword.spec",
+			"begin": "^(Source|Patch)",
+			"end": ":"
+		}, {
+			"match": "(ifarch|ifnarch|ifos|ifnos)",
+			"name": "keyword.control.spec"
+		}, {
+			"name": "variable.spec",
+			"begin": "%\\{",
+			"patterns": [
+				{
+					"match": "__[A-Z_a-z_0-9_]*",
+					"name": "variable.spec"
+				}, {
+					"match": "[A-Z_a-z_0-9_]*",
+					"name": "variable.spec"
+				}
+			],
+			"end": "\\}"
+		}, {
+			"match": "%__([A-Z_a-z_0-9_]*)",
+			"name": "variable.spec"
+		}, {
+			"match": "%_([A-Z_a-z_0-9_]*)",
+			"name": "variable.spec"
+		}, {
+			"match": "%([A-Z_a-z_0-9_]+)",
+			"name": "variable.spec"
+		}, {
+			"match": "^%(build$|changelog|check$|clean$|description|files|install$|package|prep$|pre|preun|post|postun|trigger|triggerin|triggerpostun|triggerun|verifyscript)",
+			"name": "keyword.control.spec"
+		}, {
+			"match": "%(if|else|endif|define|global|undefine)",
+			"name": "keyword.control.spec"
+		}, {
+			"match": "^\\s*#.*$",
+			"name": "comment.line.spec"
+		}, {
+			"match": "^# norootforbuild",
+			"name": "keyword.spec"
+		}, {
+			"match": "^\\* .*\\)$",
+			"name": "meta.documentation.spec"
+		}, {
+			"include": "source.shell"
+		}
+	],
+	"uuid": "49e56b70-cf79-11e1-9b23-0800200c9a66"
+}
