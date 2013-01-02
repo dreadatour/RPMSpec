@@ -109,15 +109,15 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>^\s*#.*$</string>
-			<key>name</key>
-			<string>comment.line.spec</string>
-		</dict>
-		<dict>
-			<key>match</key>
 			<string>^# norootforbuild</string>
 			<key>name</key>
 			<string>keyword.spec</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>^\s*#.*$</string>
+			<key>name</key>
+			<string>comment.line.spec</string>
 		</dict>
 		<dict>
 			<key>match</key>
