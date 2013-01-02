@@ -77,13 +77,7 @@
 			<array>
 				<dict>
 					<key>match</key>
-					<string>__[A-Z_a-z_0-9_]*</string>
-					<key>name</key>
-					<string>variable.spec</string>
-				</dict>
-				<dict>
-					<key>match</key>
-					<string>[A-Z_a-z_0-9_]*</string>
+					<string>[A-Za-z0-9_]+</string>
 					<key>name</key>
 					<string>variable.spec</string>
 				</dict>
@@ -91,19 +85,7 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>%__([A-Z_a-z_0-9_]*)</string>
-			<key>name</key>
-			<string>variable.spec</string>
-		</dict>
-		<dict>
-			<key>match</key>
-			<string>%_([A-Z_a-z_0-9_]*)</string>
-			<key>name</key>
-			<string>variable.spec</string>
-		</dict>
-		<dict>
-			<key>match</key>
-			<string>%([A-Z_a-z_0-9_]+)</string>
+			<string>%([A-Za-z0-9_]+)</string>
 			<key>name</key>
 			<string>variable.spec</string>
 		</dict>
