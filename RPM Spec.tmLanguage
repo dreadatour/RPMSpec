@@ -91,7 +91,13 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>^%(build$|changelog|check$|clean$|description|files|install$|package|prep$|pre|preun|post|postun|trigger|triggerin|triggerpostun|triggerun|verifyscript)</string>
+			<string>^%(changelog|check$|description|files|package)</string>
+			<key>name</key>
+			<string>keyword.control.spec</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>^(%(prep$|build$|install$|clean$|(pre|post)(un)?|trigger(in|un|postun)|verifyscript))</string>
 			<key>name</key>
 			<string>keyword.control.spec</string>
 		</dict>
