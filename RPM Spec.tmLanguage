@@ -88,10 +88,31 @@
 			<string>keyword.spec</string>
 		</dict>
 		<dict>
-			<key>match</key>
-			<string>(ifarch|ifnarch|ifos|ifnos)</string>
-			<key>name</key>
-			<string>keyword.control.spec</string>
+			<key>begin</key>
+			<string>%(ifarch|ifnarch)</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.control.spec</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string>$</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#archs</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>[^\s,]+</string>
+					<key>name</key>
+					<string>invalid.spec</string>
+				</dict>
+			</array>
 		</dict>
 		<dict>
 			<key>match</key>
@@ -107,7 +128,7 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>%(if|else|endif|define|global|undefine)</string>
+			<string>%(if|else|endif|define|global|undefine|ifos|ifnos)</string>
 			<key>name</key>
 			<string>keyword.control.spec</string>
 		</dict>
