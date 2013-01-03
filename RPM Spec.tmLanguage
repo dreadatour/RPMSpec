@@ -62,6 +62,12 @@
 		</dict>
 		<dict>
 			<key>match</key>
+			<string>^# norootforbuild</string>
+			<key>name</key>
+			<string>keyword.spec</string>
+		</dict>
+		<dict>
+			<key>match</key>
 			<string>(ifarch|ifnarch|ifos|ifnos)</string>
 			<key>name</key>
 			<string>keyword.control.spec</string>
@@ -106,12 +112,6 @@
 			<string>%([A-Za-z0-9_]+)</string>
 			<key>name</key>
 			<string>variable.spec</string>
-		</dict>
-		<dict>
-			<key>match</key>
-			<string>^# norootforbuild</string>
-			<key>name</key>
-			<string>keyword.spec</string>
 		</dict>
 		<dict>
 			<key>match</key>
