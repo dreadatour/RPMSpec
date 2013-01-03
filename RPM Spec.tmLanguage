@@ -67,6 +67,24 @@
 			<string>keyword.control.spec</string>
 		</dict>
 		<dict>
+			<key>match</key>
+			<string>^%(changelog|check$|description|files|package)</string>
+			<key>name</key>
+			<string>keyword.control.spec</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>^(%(prep$|build$|install$|clean$|(pre|post)(un)?|trigger(in|un|postun)|verifyscript))</string>
+			<key>name</key>
+			<string>keyword.control.spec</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>%(if|else|endif|define|global|undefine)</string>
+			<key>name</key>
+			<string>keyword.control.spec</string>
+		</dict>
+		<dict>
 			<key>begin</key>
 			<string>%\{</string>
 			<key>end</key>
@@ -88,24 +106,6 @@
 			<string>%([A-Za-z0-9_]+)</string>
 			<key>name</key>
 			<string>variable.spec</string>
-		</dict>
-		<dict>
-			<key>match</key>
-			<string>^%(changelog|check$|description|files|package)</string>
-			<key>name</key>
-			<string>keyword.control.spec</string>
-		</dict>
-		<dict>
-			<key>match</key>
-			<string>^(%(prep$|build$|install$|clean$|(pre|post)(un)?|trigger(in|un|postun)|verifyscript))</string>
-			<key>name</key>
-			<string>keyword.control.spec</string>
-		</dict>
-		<dict>
-			<key>match</key>
-			<string>%(if|else|endif|define|global|undefine)</string>
-			<key>name</key>
-			<string>keyword.control.spec</string>
 		</dict>
 		<dict>
 			<key>match</key>
