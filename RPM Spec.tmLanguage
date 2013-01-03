@@ -138,22 +138,13 @@
 			<key>end</key>
 			<string>\}</string>
 			<key>name</key>
-			<string>variable.spec</string>
-			<key>patterns</key>
-			<array>
-				<dict>
-					<key>match</key>
-					<string>[A-Za-z0-9_]+</string>
-					<key>name</key>
-					<string>variable.spec</string>
-				</dict>
-			</array>
+			<string>variable.other.spec</string>
 		</dict>
 		<dict>
 			<key>match</key>
 			<string>%([A-Za-z0-9_]+)</string>
 			<key>name</key>
-			<string>variable.spec</string>
+			<string>variable.other.spec</string>
 		</dict>
 		<dict>
 			<key>match</key>
