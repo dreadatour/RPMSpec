@@ -17,10 +17,31 @@
 			<string>keyword.spec</string>
 		</dict>
 		<dict>
-			<key>match</key>
+			<key>begin</key>
 			<string>(BuildArch|BuildArchitectures|ExclusiveArch|ExcludeArch):</string>
-			<key>name</key>
-			<string>keyword.spec</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.spec</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string>$</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#archs</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>[^\s,]+</string>
+					<key>name</key>
+					<string>invalid.spec</string>
+				</dict>
+			</array>
 		</dict>
 		<dict>
 			<key>match</key>
