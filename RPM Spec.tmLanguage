@@ -17,10 +17,31 @@
 			<string>keyword.spec</string>
 		</dict>
 		<dict>
-			<key>match</key>
+			<key>begin</key>
 			<string>(BuildArch|BuildArchitectures|ExclusiveArch|ExcludeArch):</string>
-			<key>name</key>
-			<string>keyword.spec</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.spec</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string>$</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#archs</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>[^\s,]+</string>
+					<key>name</key>
+					<string>invalid.spec</string>
+				</dict>
+			</array>
 		</dict>
 		<dict>
 			<key>match</key>
@@ -62,7 +83,52 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>(ifarch|ifnarch|ifos|ifnos)</string>
+			<string>^# norootforbuild</string>
+			<key>name</key>
+			<string>keyword.spec</string>
+		</dict>
+		<dict>
+			<key>begin</key>
+			<string>%(ifarch|ifnarch)</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.control.spec</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string>$</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#archs</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>[^\s,]+</string>
+					<key>name</key>
+					<string>invalid.spec</string>
+				</dict>
+			</array>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>^%(changelog|check$|description|files|package)</string>
+			<key>name</key>
+			<string>keyword.control.spec</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>^(%(prep$|build$|install$|clean$|(pre|post)(un)?|trigger(in|un|postun)|verifyscript))</string>
+			<key>name</key>
+			<string>keyword.control.spec</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>%(if|else|endif|define|global|undefine|ifos|ifnos)</string>
 			<key>name</key>
 			<string>keyword.control.spec</string>
 		</dict>
@@ -72,52 +138,13 @@
 			<key>end</key>
 			<string>\}</string>
 			<key>name</key>
-			<string>variable.spec</string>
-			<key>patterns</key>
-			<array>
-				<dict>
-					<key>match</key>
-					<string>__[A-Z_a-z_0-9_]*</string>
-					<key>name</key>
-					<string>variable.spec</string>
-				</dict>
-				<dict>
-					<key>match</key>
-					<string>[A-Z_a-z_0-9_]*</string>
-					<key>name</key>
-					<string>variable.spec</string>
-				</dict>
-			</array>
+			<string>variable.other.spec</string>
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>%__([A-Z_a-z_0-9_]*)</string>
+			<string>%([A-Za-z0-9_]+)</string>
 			<key>name</key>
-			<string>variable.spec</string>
-		</dict>
-		<dict>
-			<key>match</key>
-			<string>%_([A-Z_a-z_0-9_]*)</string>
-			<key>name</key>
-			<string>variable.spec</string>
-		</dict>
-		<dict>
-			<key>match</key>
-			<string>%([A-Z_a-z_0-9_]+)</string>
-			<key>name</key>
-			<string>variable.spec</string>
-		</dict>
-		<dict>
-			<key>match</key>
-			<string>^%(build$|changelog|check$|clean$|description|files|install$|package|prep$|pre|preun|post|postun|trigger|triggerin|triggerpostun|triggerun|verifyscript)</string>
-			<key>name</key>
-			<string>keyword.control.spec</string>
-		</dict>
-		<dict>
-			<key>match</key>
-			<string>%(if|else|endif|define|global|undefine)</string>
-			<key>name</key>
-			<string>keyword.control.spec</string>
+			<string>variable.other.spec</string>
 		</dict>
 		<dict>
 			<key>match</key>
@@ -127,17 +154,21 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>^# norootforbuild</string>
-			<key>name</key>
-			<string>keyword.spec</string>
-		</dict>
-		<dict>
-			<key>match</key>
 			<string>^\* .*\)$</string>
 			<key>name</key>
 			<string>meta.documentation.spec</string>
 		</dict>
 	</array>
+	<key>repository</key>
+	<dict>
+		<key>archs</key>
+		<dict>
+			<key>match</key>
+			<string>\b(i386|i486|i586|i686|athlon|ia64|alpha|alphaev5|alphaev56|alphapca56|alphaev6|alphaev67|sparc|sparcv9|sparc64armv3l|armv4b|armv4lm|ips|mipsel|ppc|ppc|iseries|ppcpseries|ppc64|m68k|m68kmint|Sgi|rs6000|i370|s390x|s390|noarch)\b</string>
+			<key>name</key>
+			<string>constant.other</string>
+		</dict>
+	</dict>
 	<key>scopeName</key>
 	<string>source.spec</string>
 	<key>uuid</key>
