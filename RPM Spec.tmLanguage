@@ -122,7 +122,7 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>^(%(prep$|build$|install$|clean$|(pre|post)(un)?|trigger(in|un|postun)|verifyscript))</string>
+			<string>^(%(prep$|build$|install$|clean$|(pre|post)(un|trans)?|trigger(in|un|postun)|verifyscript))</string>
 			<key>name</key>
 			<string>keyword.control.spec</string>
 		</dict>
