@@ -54,7 +54,7 @@
 			"match": "%([A-Z_a-z_0-9_]+)",
 			"name": "variable.spec"
 		}, {
-			"match": "^%(build$|changelog|check$|clean$|description|files|install$|package|prep$|pre|preun|post|postun|trigger|triggerin|triggerpostun|triggerun|verifyscript)",
+			"match": "^%(build$|changelog|check$|clean$|description|files|install$|package|prep$|pre|preun|pretrans|post|postun|posttrans|trigger|triggerin|triggerpostun|triggerun|verifyscript)",
 			"name": "keyword.control.spec"
 		}, {
 			"match": "%(if|else|endif|define|global|undefine)",
